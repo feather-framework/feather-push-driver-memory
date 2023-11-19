@@ -1,0 +1,32 @@
+{
+  "pins" : [
+    {
+      "identity" : "feather-push",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/feather-framework/feather-push.git",
+      "state" : {
+        "revision" : "3b40a0c2f0917fad2b58ac52947d5f338d1434e9",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "feather-service",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/feather-framework/feather-service.git",
+      "state" : {
+        "revision" : "ad5b6fa727d5de89efc3f1f2931fd0c7920c380e",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "532d8b529501fb73a2455b179e0bbb6d49b652ed",
+        "version" : "1.5.3"
+      }
+    }
+  ],
+  "version" : 2
+}
