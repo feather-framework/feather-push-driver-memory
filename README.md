@@ -1,6 +1,6 @@
 # Feather Push Driver Memory
 
-A Push driver for the Feather CMS Push service using NIO Memory.
+A push driver for the Feather CMS Push service using an in-memory notification storage.
 
 ## Getting started
 
@@ -13,7 +13,7 @@ Use at your own risk.
 To add a dependency on the package, declare it in your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/feather-framework/feather-push-driver-memory.git", .upToNextMinor(from: "0.1.0")),
+.package(url: "https://github.com/feather-framework/feather-push-driver-memory", .upToNextMinor(from: "0.2.0")),
 ```
 
 and to your application target, add `FeatherPushDriverMemory` to your dependencies:
@@ -31,7 +31,7 @@ import PackageDescription
 let package = Package(
     name: "my-application",
     dependencies: [
-        .package(url: "https://github.com/feather-framework/feather-Push-driver-memory.git", .upToNextMinor(from: "0.1.0")),
+        .package(url: "https://github.com/feather-framework/feather-Push-driver-memory", .upToNextMinor(from: "0.2.0")),
     ],
     targets: [
         .target(name: "MyApplication", dependencies: [

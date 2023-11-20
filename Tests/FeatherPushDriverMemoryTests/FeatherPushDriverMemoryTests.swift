@@ -17,10 +17,10 @@ final class FeatherPushDriverMemoryTests: XCTestCase {
     func testMemoryDriverUsingTestSuite() async throws {
         do {
             let registry = ServiceRegistry()
-            try await registry.add(.memoryPush(), as: .memoryPush)
+            try await registry.add(MemoryPushServiceContext())
             
             try await registry.run()
-            let push = try await registry.get(.memoryPush) as! PushService
+            let push = try await registry.push()
             
             do {
                 try await push.send(
