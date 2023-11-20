@@ -7,9 +7,11 @@
 
 import FeatherService
 
-struct MemoryPushServiceContext: ServiceContext {
+public struct MemoryPushServiceContext: ServiceContext {
+    
+    public init() {}
 
-    func createDriver() throws -> ServiceDriver {
+    public func createDriver() throws -> ServiceDriver {
         MemoryPushServiceDriver()
     }
 
