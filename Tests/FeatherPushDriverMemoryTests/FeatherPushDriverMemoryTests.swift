@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-import FeatherService
+import FeatherComponent
 import FeatherPush
 import FeatherPushDriverMemory
 import XCTFeatherPush
@@ -16,8 +16,8 @@ final class FeatherPushDriverMemoryTests: XCTestCase {
 
     func testMemoryDriverUsingTestSuite() async throws {
         do {
-            let registry = ServiceRegistry()
-            try await registry.add(MemoryPushServiceContext())
+            let registry = ComponentRegistry()
+            try await registry.addPush(MemoryPushComponentContext())
             
             try await registry.run()
             let push = try await registry.push()
@@ -36,7 +36,7 @@ final class FeatherPushDriverMemoryTests: XCTestCase {
                     ]
                 )
                 
-                let memoryPush = push as! MemoryPushService
+                let memoryPush = push as! MemoryPushComponent
                 let notifications = await memoryPush.getNotifications()
                 print(notifications)
                 XCTAssertFalse(notifications.isEmpty)

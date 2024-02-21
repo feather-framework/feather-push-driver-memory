@@ -1,6 +1,6 @@
 # Feather Push Driver Memory
 
-A push driver for the Feather CMS Push service using an in-memory notification storage.
+A push driver for the Feather CMS Push component using an in-memory notification storage.
 
 ## Getting started
 
