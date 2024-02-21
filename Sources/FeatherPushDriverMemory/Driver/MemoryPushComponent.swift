@@ -1,40 +1,40 @@
 //
-//  MemoryPushService.swift
+//  MemoryPushComponent.swift
 //  FeatherPushDriverMemory
 //
 //  Created by Tibor Bodecs on 2020. 04. 28..
 //
 
-import FeatherService
+import FeatherComponent
 import FeatherPush
 
 @dynamicMemberLookup
-public struct MemoryPushService {
+public struct MemoryPushComponent {
 
     let memoryPush: MemoryPush
-    public let config: ServiceConfig
+    public let config: ComponentConfig
 
     subscript<T>(
-        dynamicMember keyPath: KeyPath<MemoryPushServiceContext, T>
+        dynamicMember keyPath: KeyPath<MemoryPushComponentContext, T>
     ) -> T {
-        let context = config.context as! MemoryPushServiceContext
+        let context = config.context as! MemoryPushComponentContext
         return context[keyPath: keyPath]
     }
 
-    init(config: ServiceConfig) {
+    init(config: ComponentConfig) {
         self.memoryPush = .init()
         self.config = config
     }
 }
 
-public extension MemoryPushService {
+public extension MemoryPushComponent {
     
     func getNotifications() async -> [(Notification, [Recipient])] {
         await memoryPush.getNotifications()
     }
 }
 
-extension MemoryPushService: PushService {
+extension MemoryPushComponent: PushComponent {
 
     public func send(
         notification: Notification,
